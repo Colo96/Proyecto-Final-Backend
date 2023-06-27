@@ -1,0 +1,14 @@
+<div class="d-flex justify-content-around align-content-stretch flex-wrap my-3">
+  {{#each products}}
+    <div class="card" style="width: 18rem;">
+      <img src="{{this.thumbnail_url}}" class="card-img-top" alt="Producto" />
+      <div class="card-body">
+        <h5 class="card-title">{{this.title}}</h5>
+        <p class="card-text">{{this.description}}</p>
+        <p class="card-text">${{this.price}}</p>
+        <a id="addToCart" href="/api/views/cart" class="btn btn-primary">Add to
+          cart</a>
+      </div>
+    </div>
+  {{/each}}
+</div>

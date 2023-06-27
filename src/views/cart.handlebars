@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="list-group my-3">
+    {{#each orders}}
+      <a href="#" class="list-group-item list-group-item-action">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">Usuario: {{this.user}}/h5>
+          <small>Orden Nro: {{this.order_number}}</small>
+        </div>
+        {{#each this.products}}
+        <ul>
+          <li>Id: {{this._id}}</li>
+          <li>Cantidad: {{this.quantity}}</li>
+          <li>Precio: ${{this.price}}</li>
+        </ul>
+        {{/each}}
+        <p class="mb-1">Total: ${{this.total_price}}</p>
+      </a>
+    {{/each}}
+  </div>
+  <a href="/api/payments/create-checkout-session" class="btn btn-primary">Make the payment</a>
+</div>
